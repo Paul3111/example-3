@@ -20,9 +20,11 @@
         displayMessage() {
           const new_button = document.createElement("div");
           new_button.setAttribute("id", "message");
-          new_button.textContent = "This message displayed by JavaScript";
+          const userInput = document.querySelector("#message-input").value;
+          new_button.textContent = userInput;
+          document.querySelector("#message-input").value = "";
           document.querySelector("#main-container").append(new_button);
-          console.log("Thanks for clicking me!");
+          console.log(userInput);
         }
         hideMessage() {
           const element = document.getElementById("message");
